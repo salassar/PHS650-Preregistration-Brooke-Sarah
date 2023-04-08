@@ -1,0 +1,22 @@
+---
+title: "combine both datasets"
+format: html
+editor: source
+---
+
+```{r}
+# read in the data
+data1 <- read.csv("Homework3_variables.csv")
+```
+
+```{r}
+# read in Sarah's vars
+data2 <- read.csv("Sarah_vars.csv")
+```
+
+```{r}
+# merge the data
+data <- merge(data1, data2, by=c("track_id", "X"))
+
+write.csv(data, "new_vars.csv")
+```
